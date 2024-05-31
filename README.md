@@ -1,15 +1,14 @@
 ### International Database
-
-Hiii, I'm Laura the NMO-P of IFMSA-NL 23/24 and I made the International Database. With this program I wanted to make sure that volunteers could easily get and use the opportunites IFMSA has. I'm a pretty novice coder, so my code might not look the best or be the most efficient, but it gets the job done.
+-Hiii, I'm Laura the NMO-P of IFMSA-NL 23/24 and I made the International Database. With this program I wanted to make sure that volunteers could easily get and use the opportunites IFMSA has. I'm a pretty novice coder, so my code might not look the best or be the most efficient, but it gets the job done.
 
 **Quick overview**
-This program looks through your gmail, gets the deadline, some information, and creates the email into a PDF. After that it'll send it over WhatsApp. At the same time it also uploads this information to a Google Sheet so people can look back at an overview of current opportunities. To create a summary I use AI, this AI is done locally, so it has a neglible climate impact and is private.
+-This program looks through your gmail, gets the deadline, some information, and creates the email into a PDF. After that it'll send it over WhatsApp. At the same time it also uploads this information to a Google Sheet so people can look back at an overview of current opportunities. To create a summary I use AI, this AI is done locally, so it has a neglible climate impact and is private.
 
 
 **Setup Instructions:**
-To get a more detailed instruction watch the video I've recorded just for this.
+-To get a more detailed instruction watch the video I've recorded just for this.
 
-To enable the program to access your email, Gmail API is utilized. Additionally, access to Google Sheets and Google Drive is required. Follow these steps:
+-To enable the program to access your email, Gmail API is utilized. Additionally, access to Google Sheets and Google Drive is required. Follow these steps:
 
 1. **Enable Necessary APIs:**
     - Access the [Google Cloud Console](https://console.cloud.google.com/projectselector2/apis/credentials?supportedpurview=project) and create a project.
@@ -67,6 +66,11 @@ To enable the program to access your email, Gmail API is utilized. Additionally,
 - Two sheets provided: internal version for data processing and regular version for public view.
 - Customize as needed; the regular version is preformatted for IFMSA-NL use.
 - You can find it [here:](https://drive.google.com/drive/folders/1PtnCCO9G2ouEJ_F30BNIOzhu37pgPJbn?usp=share_link)
+
+
+**Emoji's**
+- In order to use emoji's in WhatsApp you have to use shortcodes. These start with a colon ":' followed by a specific string. You can find the full list here: https://gist.github.com/hkan/264423ab0ee720efb55e05a0f5f90887.
+- use /t to select the emoji you want to use. An example could be :hour/t to create a ⏰.
 
 **Behavior:**
 - The program marks emails as read after processing, ensuring it only handles unread emails. You can modify this behavior, but it may compromise functionality.
