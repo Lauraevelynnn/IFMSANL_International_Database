@@ -1,15 +1,10 @@
 ### International Database
 
-**Behavior:**
-- The program marks emails as read after processing, ensuring it only handles unread emails. You can modify this behavior, but it may compromise functionality.
+Hiii, I'm Laura the NMO-P of IFMSA-NL 23/24 and I made the International Database. With this program I wanted to make sure that volunteers could easily get and use the opportunites IFMSA has. I'm a pretty novice coder, so my code might not look the best or be the most efficient, but it gets the job done.
 
-**Known Issues and Fixes:**
-- WhatsApp Database Error:
-    - Occurs due to attempting to type a message before it's loaded. Solution: Extend load time, you can do this in the config
-- PDFs Missing Images:
-    - Currently under investigation and being addressed.
-- Incorrect Deadline Selection:
-    - The program attempts to extract deadlines from email subjects, but this can fail. In such cases, AI is relied upon, which may not always be accurate.
+**Quick overview**
+This program looks through your gmail, gets the deadline, some information, and creates the email into a PDF. After that it'll send it over WhatsApp. At the same time it also uploads this information to a Google Sheet so people can look back at an overview of current opportunities. To create a summary I use AI, this AI is done locally, so it has a neglible climate impact and is private.
+
 
 **Setup Instructions:**
 To get a more detailed instruction watch the video I've recorded just for this.
@@ -72,5 +67,16 @@ To enable the program to access your email, Gmail API is utilized. Additionally,
 - Two sheets provided: internal version for data processing and regular version for public view.
 - Customize as needed; the regular version is preformatted for IFMSA-NL use.
 - You can find it [here:](https://drive.google.com/drive/folders/1PtnCCO9G2ouEJ_F30BNIOzhu37pgPJbn?usp=share_link)
+
+**Behavior:**
+- The program marks emails as read after processing, ensuring it only handles unread emails. You can modify this behavior, but it may compromise functionality.
+
+**Known Issues and Fixes:**
+- WhatsApp Database Error:
+    - Occurs due to attempting to type a message before it's loaded. Solution: Extend load time, you can do this in the config
+- PDFs Missing Images:
+    - Currently under investigation and being addressed.
+- Incorrect Deadline Selection:
+    - The program attempts to extract deadlines from email subjects, but this can fail. In such cases, AI is relied upon, which may not always be accurate.
 
 **Note:** Currently, the program supports WhatsApp only. Efforts are underway to integrate Telegram as well.
