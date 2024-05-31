@@ -69,7 +69,7 @@ To enable the program to access your email, Gmail API is utilized. Additionally,
 
 
 **Emoji's**
-- In order to use emoji's in WhatsApp you have to use shortcodes. These start with a colon ":' followed by a specific string. You can find the full list [here:](https://gist.github.com/hkan/264423ab0ee720efb55e05a0f5f90887).
+- In order to use emoji's in WhatsApp you have to use shortcodes. These start with a colon ":' followed by a specific string. You can find the full list [here:](https://gist.github.com/hkan/264423ab0ee720efb55e05a0f5f90887)
 - use /t to select the emoji you want to use. An example could be :hour/t to create a ⏰.
 
 **Behavior:**
