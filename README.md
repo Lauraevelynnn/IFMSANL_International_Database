@@ -55,6 +55,7 @@ To enable the program to access your email, Gmail API is utilized. Additionally,
     - Google Sheet
         - sheet_id. Replace this with the Google Sheet ID of the Google Sheet you use. You can find this in the URL
     - Whatsapp
+    	- send_whatsapp. This is a True or False. If turned False it will not send a WhatsApp message.
         - Group_ID. This is the group ID for whatsapp, you can find it if you make an invite link in the url
         - Message. Here is the WhatsApp Message. You can add enters and it will also use it in the WhatsApp message. Emojis are a bit more complicated and can be used by using a colon (:) and type the emoji you want, write \t to select it. (Test this out in your WhatsApp Web for which words you should use.)
         - Wait_start. This is the time the program waits until it writes the message
