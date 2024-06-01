@@ -1,87 +1,148 @@
-### International Database
-Hiii, I'm Laura the NMO-P of IFMSA-NL 23/24 and I made the International Database. With this program I wanted to make sure that volunteers could easily get and use the opportunites IFMSA has. I'm a pretty novice coder, so my code might not look the best or be the most efficient, but it gets the job done.
+# 🌐 IFMSA-NL International Database
 
-### Quick overview
-This program looks through your gmail, gets the deadline, some information, and creates the email into a PDF. After that it'll send it over WhatsApp. At the same time it also uploads this information to a Google Sheet so people can look back at an overview of current opportunities. To create a summary I use AI, this AI is done locally, so it has a neglible climate impact and is private.
+### Hello, world! 🌍
+I'm Laura, the NMO-P of IFMSA-NL 23/24, and I created the International Database to help our amazing volunteers easily access and use the opportunities IFMSA offers. As a beginner coder, my code might not be perfect, but it works and gets the job done! 🚀
+
+## Quick Overview
+This program does some cool things:
+1. 📧 Scans your Gmail for relevant opportunities.
+2. 🗓️ Extracts deadline and a summary of the opportunity
+3. 📄 Converts emails into PDFs.
+4. 📊 Uploads the details to a Google Sheet for easy reference.
+5. 📲 Sends these PDFs,  via WhatsApp.
+
+To make things even better, the program uses local AI to summarize emails, ensuring privacy and minimal environmental impact, no ChatGPT or Llama found here.
+
+## Pictures of the database
+
+<img width="664" alt="database_start" src="https://github.com/Lauraevelynnn/IFMSANL_International_Database/assets/167855057/0886a6f2-0d07-4f34-9a22-7f8074854e6a">
+
+<sup>_(Front page of the International Database Sheet, I removed my contact information for privacy)_</sup>
+****
+
+<img width="969" alt="database_sheet" src="https://github.com/Lauraevelynnn/IFMSANL_International_Database/assets/167855057/ecefb937-79dc-436a-b066-48ceb39363c1">
+
+<sup>_(All the opportunities lined up)_</sup>
+****
+
+<img width="644" alt="whatsapp" src="https://github.com/Lauraevelynnn/IFMSANL_International_Database/assets/167855057/dc58d5d1-14e7-4d5a-a576-c1f17d529a1e">
+
+<sup>_(The message sent on WhatsApp)_</sup>
+
+****
+
+## Setup Instructions
+I've recorded a detailed video guide for you (which you can find [here]()), but here’s a quick rundown:
+
+### Step 1: Enable Necessary APIs
+1. Go to the [Google Cloud Console](https://console.cloud.google.com/projectselector2/apis/credentials?supportedpurview=project) and create a project.
+2. Enable the Gmail API, Google Drive API, and Google Sheets API.
+
+### Step 2: Set Up Gmail API Credentials
+1. Visit the [credentials page](https://console.cloud.google.com/apis/credentials?project=peppy-goods-422010-e6&supportedpurview=project) and create an OAuth Client ID for a Desktop App named "gmail".
+2. Save these credentials as `credentials_gmail.json` in the `tokens` folder.
+
+### Step 3: Configure Google Drive API
+1. Create an OAuth Client ID for a Web application named "GDrive".
+2. Copy the Client ID and Client Secret to `pydrive_setting.yaml` in the `tokens` folder.
+
+### Step 4: Service Account for Google Sheets
+1. Create a service account and share your Google Sheet with it.
+2. Save the credentials as `credentials_sheets.json` in the `tokens` folder.
+
+### Step 5: Google Apps Script
+1. Copy the Google Apps Script into your own file.
+2. Insert the internal sheets ID into the script.
+3. Set up a trigger to run the script daily.
+
+### Step 6: Configuration File
+You can customize the functionality of the program. A more detailed look can be found below.
+1. Under Google Drive, Folder ID: Put the folder ID of the Google Drive where the PDFs will be placed.
+2. Under Google Sheets, Sheet ID: Put the Sheet ID of the internal database sheet.
+3. Under WhatsApp, Group ID: Put the WhatsApp Group ID, where the messages will be send here.
+
+## Google Drive Folder Structure
+- Two sheets: an internal version for data processing and a public version.
+- Customize as needed; the public version is preformatted for IFMSA-NL use.
+- [Access the folder here](https://drive.google.com/drive/folders/1PtnCCO9G2ouEJ_F30BNIOzhu37pgPJbn?usp=share_link).
+
+## Emojis
+- Use emoji shortcodes in WhatsApp, starting with a colon `:`. 
+- [Find the full list of shortcodes here](https://gist.github.com/hkan/264423ab0ee720efb55e05a0f5f90887).
+- Example: `:hour\t` for ⏰.
+
+## Program Behavior
+- Marks emails as read after processing to handle only unread emails. You can change this, but it might affect functionality.
+
+## Known Issues and Fixes
+- **WhatsApp Database Error**: Extend load time in the config.
+- **PDFs Missing Images**: Trying to fix this.
+- **Incorrect Deadline Selection**: AI extraction may occasionally miss deadlines.
+- **WhatsApp Web logging out**: Sadly I cannot fix this, for this I recommend either checking it beforehand or if you're running it on a server, not closing the WhatsApp Web instance
+
+## Note
+Currently, the program supports WhatsApp only. Telegram integration is in progress! You can turn off the WhatsApp functionality
 
 
-### Setup Instructions:
-To get a more detailed instruction watch the video I've recorded just for this.
+# Config overview
+Every part of the config can be changed. Here is an overview of what is in there and what it does.
 
-To enable the program to access your email, Gmail API is utilized. Additionally, access to Google Sheets and Google Drive is required. Follow these steps:
+- **Gmail**
 
-1. **Enable Necessary APIs:**
-    - Access the [Google Cloud Console](https://console.cloud.google.com/projectselector2/apis/credentials?supportedpurview=project) and create a project.
-    - Enable the Gmail API, Google Drive API, and Google Sheets API.
+    - **query**: The Query in which the program will look for messages. I recommend always using unread, as otherwise the program will redo the messages everytime. Default: `label:Database in:unread`
 
-2. **Set Up Gmail API Credentials:**
-    - Navigate to the [credentials page](https://console.cloud.google.com/apis/credentials?project=peppy-goods-422010-e6&supportedpurview=project) and create OAuth Client ID for a Desktop App named "gmail".
-    - Save the credentials as `credentials_gmail.json` in the `tokens` folder.
-
-3. **Configure Google Drive API:**
-    - Create OAuth Client ID for a Website application named "GDrive".
-    - Copy the Client ID and Client Secret to `pydrive_setting.yaml` in the `tokens` folder.
-
-4. **Service Account for Google Sheets:**
-    - Create a service account and share the Google Sheet with it to allow data addition.
-    - Save the credentials as `credentials_sheets.json` in the `tokens` folder.
-    - Share your sheet with this service account.
+- **NLP (Natural Language Processing)**
     
-5. **Google Apps Script**
-	- Copy the Google Apps Script over into your own file.
-	- Put the Internal sheets ID into the script.
-	- Set up a trigger, so it runs every day.
+    Note: it will only use the NLP/AI when it cannot find a deadline in the email subject. The NLPs come from [HuggingFace](https://huggingface.co). Here you can also find different models.
+    - **deadline_purpose**: Enables the NLP to answer a question. Default: `question-answering`
+    - **deadline_model**: What model the Deadline NLP uses. Default: `deepset/roberta-base-squad2`
+    - **deadline_question**: = Poses a question to the NLP. Default: `What is the deadline?`
+    - **summarization_purpose**: = What the purpose of the summarization is. Default: `summarization`
+    - **summarization_model**: = What model the summarization NLP uses. Default: `sshleifer/distilbart-cnn-12-6`
 
-6. **Configuration File:**
-    - Customize program behavior in the config file.
-    - Variables
-        - There are a few variables you can use in the sheet. These are signaled by ${}. You can use the following variables
-            - ${deadline}
-            - ${email_subject}
-            - ${email_date}
-            - ${email_sender}
-            - ${email_summary}
-            - ${deadline}
-            - ${file_link}
-    - Gmail section
-        - Query. let's the program know where to search
-    - NLP (Natural Language Processing), I recommend not changing this
-        - Models. Models are the model used for the NLP, you can find them at huggingface
-        - Deadline_Question. This is the question it asks to find the deadline
-    - Google Drive
-        - pdf_file_path. This is the temperay path used for the pdf. I recommend to keep it the same
-        - html_file_path. Here it saves the html. I recommond to keep it the same
-        - file_name. This is the file name in the Google Drive.
-    - Google Sheet
-        - sheet_id. Replace this with the Google Sheet ID of the Google Sheet you use. You can find this in the URL
-    - Whatsapp
-    	- send_whatsapp. This is a True or False. If turned False it will not send a WhatsApp message.
-        - Group_ID. This is the group ID for whatsapp, you can find it if you make an invite link in the url
-        - Message. Here is the WhatsApp Message. You can add enters and it will also use it in the WhatsApp message. Emojis are a bit more complicated and can be used by using a colon (:) and type the emoji you want, write \t to select it. (Test this out in your WhatsApp Web for which words you should use.)
-        - Wait_start. This is the time the program waits until it writes the message
-        - Wait_close. How long it should wait to close WhatsApp Web
-        - close. Should it close WhatsApp Web after it's done.
-    - Ensure correct settings for Gmail Query, NLP, Google Drive, and WhatsApp sections.
+- **Google Drive**
 
-**Google Drive Folder Structure:**
-- Two sheets provided: internal version for data processing and regular version for public view.
-- Customize as needed; the regular version is preformatted for IFMSA-NL use.
-- You can find it [here:](https://drive.google.com/drive/folders/1PtnCCO9G2ouEJ_F30BNIOzhu37pgPJbn?usp=share_link)
+    - **pdf_file_path**: Where the PDF is temporarily stored. Default: `temp.pdf`
+    - **html_file_path**: Where the HTML is temporarily stored. Default: `temp.html`
+    - **file_name**: What the name of the PDF will be. Default: `Deadline: ${deadline} | Subject: ${email_subject}`
+    - **folder_id**: What is the Google Drive folder ID where the PDFs will be stored. No default value.
+
+- **Google Sheets**
+
+    - **sheet_ID**: What is the Google Sheet ID where the opportunities will be solved. No default value.
+
+- **WhatsApp**
+
+    - **send_whatsapp**: If a WhatsApp should be send. If turned off, no WhatsApp will be send. Can be either `True` or `False`. Default: `True`
+    - **group_id**: What is the Group ID of the WhatsApp group in which the opporunties will be shared. No default value
+    - **message** What the WhatsApp Message will be. You can use Emojis as described in the ReadMe. Emojis always start with `:` and end with a `\t`. Default: 
+
+    ```
+    :laun\t *Exciting Opportunity Alert!* :laun\t
+
+    :tear-\t On _${email_date} GMT_ an email was sent by _${email_sender}_ about a new exciting opportunity!
+    
+    :gli\t *Opportunity Description:*
+    _${email_summary}_
+
+    :hour\t *Deadline:*
+    _${deadline}_ | (Note: if this is a combined call there may be multiple deadlines)
+    
+    :link\t *Find out the details by following the link!* :mail\t
+    ${file_link}
+    
+    :meri\t Missed something? Check out the International Database in the group description!
+    
+    :rob\t _I am an automated message, and sometimes I make a little mistake, please correct me if I do :)_
+    ```
+
+    - **wait_start**: How long the program should wait before typing the message. This value will depend on the speed of your computer. Default: `30`
+    - **wait_close**: How long the program should wait to close the WhatsApp window. Default: `15`
+    - **close**: Should WhatsApp close after the message is send. Values can be either `True` or `False`. Default: `True`
 
 
-**Emoji's**
-- In order to use emoji's in WhatsApp you have to use shortcodes. These start with a colon ":' followed by a specific string. You can find the full list [here:](https://gist.github.com/hkan/264423ab0ee720efb55e05a0f5f90887)
-- use /t to select the emoji you want to use. An example could be :hour/t to create a ⏰.
+## On the usage of variables in the config
 
-**Behavior:**
-- The program marks emails as read after processing, ensuring it only handles unread emails. You can modify this behavior, but it may compromise functionality.
-
-**Known Issues and Fixes:**
-- WhatsApp Database Error:
-    - Occurs due to attempting to type a message before it's loaded. Solution: Extend load time, you can do this in the config
-- PDFs Missing Images:
-    - Currently under investigation and being addressed.
-- Incorrect Deadline Selection:
-    - The program attempts to extract deadlines from email subjects, but this can fail. In such cases, AI is relied upon, which may not always be accurate.
-
-**Note:** Currently, the program supports WhatsApp only. Efforts are underway to integrate Telegram as well.
+There are a few variables that can be used in the config. These are marked by using `${}`. the following variables exist:
+    
+    ${deadline}, ${email_subject}, ${email_date}, ${email_sender}, ${email_summary}, ${file_link}
