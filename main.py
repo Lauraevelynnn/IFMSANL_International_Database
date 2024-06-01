@@ -117,18 +117,20 @@ if __name__ == '__main__':
         print('Adding to Google Sheet...')
         google_sheets.add(sheet_id, email_subject, email_date, email_sender, deadline, email_summary, file_link)
 
-        # Send WhatsApp
-        print('Sending WhatsApp message...')
-        wa_group_id = folder_id = config['WhatsApp']['group_id']
-        wa_message = folder_id = config['WhatsApp']['message']
-        wa_wait_start = folder_id = config['WhatsApp']['wait_start']
-        wa_wait_start = int(wa_wait_start)
-        wa_wait_close = folder_id = config['WhatsApp']['wait_close']
-        wa_wait_close = int(wa_wait_close)
-        wa_close = config['WhatsApp'].getboolean('close')
-        try:
-            pywhatkit.sendwhatmsg_to_group_instantly(wa_group_id, wa_message, wa_wait_start, wa_close, wa_wait_close)
-            print('WhatsApp message has been sent')
-        except:
-            print('Error! WhatsApp message could not be sent.')
+        #Send WhatsApp
+        sendwhatsapp = config['WhatsApp'].getboolean('send_whatsapp')
+        if sendwhatsapp:
+            print('Sending WhatsApp message...')
+            wa_group_id = folder_id = config['WhatsApp']['group_id']
+            wa_message = folder_id = config['WhatsApp']['message']
+            wa_wait_start = folder_id = config['WhatsApp']['wait_start']
+            wa_wait_start = int(wa_wait_start)
+            wa_wait_close = folder_id = config['WhatsApp']['wait_close']
+            wa_wait_close = int(wa_wait_close)
+            wa_close = config['WhatsApp'].getboolean('close')
+            try:
+                pywhatkit.sendwhatmsg_to_group_instantly(wa_group_id, wa_message, wa_wait_start, wa_close, wa_wait_close)
+                print('WhatsApp message has been sent')
+            except:
+                print('Error! WhatsApp message could not be sent.')
         
