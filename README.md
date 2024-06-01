@@ -37,7 +37,7 @@ To make things even better, the program uses local AI to summarize emails, ensur
 </details>
 
 ## Setup Instructions
-I've recorded a detailed video guide for you (which you can find [here]()), but here’s a quick rundown:
+I've recorded a detailed video guide for you (which you can find [here]()). You can download the files required from the 'releases' tab. From the [Google Drive](https://drive.google.com/drive/folders/1PtnCCO9G2ouEJ_F30BNIOzhu37pgPJbn?usp=share_link) you can find the other files. Here’s a quick rundown:
 
 ### Step 1: Enable Necessary APIs
 1. Go to the [Google Cloud Console](https://console.cloud.google.com/projectselector2/apis/credentials?supportedpurview=project) and create a project.
