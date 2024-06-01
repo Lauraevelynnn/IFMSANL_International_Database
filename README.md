@@ -13,6 +13,9 @@ This program does some cool things:
 
 To make things even better, the program uses local AI to summarize emails, ensuring privacy and minimal environmental impact, no ChatGPT or Llama found here.
 
+<details>
+<summary> Pictures of the database </summary>
+
 ## Pictures of the database
 
 <img width="664" alt="database_start" src="https://github.com/Lauraevelynnn/IFMSANL_International_Database/assets/167855057/0886a6f2-0d07-4f34-9a22-7f8074854e6a">
@@ -30,6 +33,8 @@ To make things even better, the program uses local AI to summarize emails, ensur
 <sup>_(The message sent on WhatsApp)_</sup>
 
 ****
+
+</details>
 
 ## Setup Instructions
 I've recorded a detailed video guide for you (which you can find [here]()), but here’s a quick rundown:
