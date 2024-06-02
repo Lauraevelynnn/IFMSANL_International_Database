@@ -1,7 +1,7 @@
 # 🌐 IFMSA-NL International Database
 
 ### Hello, world! 🌍
-I'm Laura, the NMO-P of IFMSA-NL 23/24. I created the International Database to help our amazing volunteers easily access and use the opportunities IFMSA offers. As a beginner coder, my code might not be perfect, but it works and gets the job done! 🚀
+I'm Laura, the NMO-P and NC of IFMSA-NL 23/24. I created the International Database to help our amazing volunteers easily access and use the opportunities IFMSA offers. As a beginner coder, my code might not be perfect, but it works and gets the job done! 🚀
 
 If you run into a bug or issue, you can either let me know here by opening an issue. You can also contact the NMO-P/NC of IFMSA-NL.
 
