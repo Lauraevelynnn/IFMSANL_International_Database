@@ -12,6 +12,7 @@ This program does some cool things:
 5. 📲 Sends these PDFs,  via WhatsApp.
 
 To make things even better, the program uses local AI to summarize emails, ensuring privacy and minimal environmental impact, no ChatGPT or Llama found here.
+Also note that, as of now, this only works on Windows.
 
 <details>
 <summary> Pictures of the database </summary>
@@ -37,7 +38,7 @@ To make things even better, the program uses local AI to summarize emails, ensur
 </details>
 
 ## Setup Instructions
-I've recorded a detailed video guide for you (which you can find [here]()). You can download the files required from the 'releases' tab. From the [Google Drive](https://drive.google.com/drive/folders/1PtnCCO9G2ouEJ_F30BNIOzhu37pgPJbn?usp=share_link) you can find the other files. Here’s a quick rundown:
+I've recorded a detailed video guide for you (which you can find [here](https://youtube.com/watch?v=sMn-jyc31u8)). You can download the files required from the 'releases' tab. From the [Google Drive](https://drive.google.com/drive/folders/1PtnCCO9G2ouEJ_F30BNIOzhu37pgPJbn?usp=share_link) you can find the other files. Here’s a quick rundown:
 
 ### Step 1: Enable Necessary APIs
 1. Go to the [Google Cloud Console](https://console.cloud.google.com/projectselector2/apis/credentials?supportedpurview=project) and create a project.
