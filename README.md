@@ -3,6 +3,9 @@
 ### Hello, world! 🌍
 I'm Laura, the NMO-P of IFMSA-NL 23/24, and I created the International Database to help our amazing volunteers easily access and use the opportunities IFMSA offers. As a beginner coder, my code might not be perfect, but it works and gets the job done! 🚀
 
+If you run into a bug or issue, you can either let me know here by opening an issue here. You can also contact the NMO-P/NC of IFMSA-NL 
+
+
 ## Quick Overview
 This program does some cool things:
 1. 📧 Scans your Gmail for relevant opportunities.
