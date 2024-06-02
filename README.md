@@ -12,6 +12,7 @@ This program does some cool things:
 5. 📲 Sends these PDFs,  via WhatsApp.
 
 To make things even better, the program uses local AI to summarize emails, ensuring privacy and minimal environmental impact, no ChatGPT or Llama found here.
+
 Also note that, as of now, this only works on Windows.
 
 <details>
